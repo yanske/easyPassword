@@ -1,0 +1,23 @@
+<div class = 'row'>
+    <div class = 'col-md-6 col-md-offset-3'>
+        <h1> Edit Account Details </h1>
+        <%= form_for(@account) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+
+            <%= f.label :login %>
+            <%= f.text_field :login, class: 'form-control' %>
+
+            <%= f.label :encrypted_password, "Password" %>
+            <%= f.password_field :encrypted_password, class: 'form-control' %>
+
+            <%= f.label :category %>
+            <%= f.collection_select :category, Category.all, :id, :name, class: 'dropdown-menu' %>
+            <br>
+            <%= f.label :note %>
+            <%= f.text_area :note, class: 'form-control' %>
+            <br>
+            <%= f.submit "Update Account", class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+</div>

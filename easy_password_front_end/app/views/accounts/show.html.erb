@@ -1,0 +1,20 @@
+<div class = 'row'>
+    <div class = 'col-md-6 col-md-offset-2'>
+        <h1><%= @account.name%></h1>
+        <ul>
+            <li><%= account_description(@account) %></li>
+            <li> Date Added: <%= @account.created_at %></li>
+            <li> Last Modified: <%= @account.updated_at %></li>
+        </ul>
+
+        <h3>Login: <%= @account.login %></h3>
+        <button class = "btn btn-primary" onclick = "copy_password('<%=@password%>')"> Copy password to clipboard!</button>
+    </div>
+</div>
+<br>
+<div class = 'row'>
+    <div class = 'col-md-6 col-md-offset-2'>
+        <%= link_to "Update", accounts_edit_path(@account), class: "btn btn-primary" %>
+        <%= link_to "Delete", @account, method: :delete, class: "btn btn-danger" %>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<h1>My Accounts</h1>
+
+<ul class = "accounts">
+    <%= render @accounts %>
+</ul>
+
+<!-- Floating add button-->
+<%= link_to accounts_new_path, class: "float" do %>
+    <i class="my-float">+</i>
+<% end %>
+
+
